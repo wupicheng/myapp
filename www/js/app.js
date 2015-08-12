@@ -30,8 +30,24 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
   // Set up the various states which the app can be in.
   // Each state's controller can be found in controllers.js
   $stateProvider
+      .state('slide', {
+          url: '/slide',
+          abstract:false,
+          templateUrl: 'templates/slide.html'
 
-  // setup an abstract state for the tabs directive
+      })
+.state('login', {
+          url: '/login',
+          abstract:false,
+          templateUrl: 'templates/logins.html'
+
+      })
+      .state('a', {
+          url: '/a',
+          abstract: true,
+          templateUrl: 'page.html'
+      })
+      // setup an abstract state for the tabs directive
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -89,6 +105,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services','u
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/slide');
 
 });

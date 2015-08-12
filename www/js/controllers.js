@@ -1,6 +1,13 @@
 angular.module('starter.controllers', [])
- .controller('InitCtrl', function($scope,$ionicModal,Users,$rootScope) {
+ .controller('InitCtrl', function($scope,$ionicModal,Users,$rootScope,$state) {
 
+
+
+       $scope.dowork=function($state){
+            $state.go('login');
+        }
+
+        //alert('aa');
         var a;
         $ionicModal.fromTemplateUrl("templates/my-modal.html", {
             scope: $scope,
@@ -12,6 +19,9 @@ angular.module('starter.controllers', [])
         $scope.openModal = function() {
            a=  $scope.modal.show();
         };
+
+
+        //openModal();
         $scope.create=function($scope){
           var user=new Users({
               username:'a'
